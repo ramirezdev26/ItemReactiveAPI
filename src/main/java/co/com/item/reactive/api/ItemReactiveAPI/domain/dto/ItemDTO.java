@@ -17,11 +17,17 @@ public class ItemDTO {
     private String name;
 
     private Integer price;
+    private Boolean isAdded = false;
 
     public ItemDTO(String category, String description, String name, Integer price) {
         this.category = category;
         this.description = description;
         this.name = name;
         this.price = price;
+        this.isAdded = false;
+    }
+
+    public ItemDTO(String id) {
+        this.id = id;
     }
 }

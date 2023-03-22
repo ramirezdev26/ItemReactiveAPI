@@ -23,6 +23,8 @@ public class Item {
     private String name;
 
     private Integer price;
+    private Boolean isAdded = false;
+
 
 
     public Item(String category, String description, String name, Integer price) {
@@ -31,5 +33,12 @@ public class Item {
         this.description = description;
         this.name = name;
         this.price = price;
+        this.isAdded = false;
     }
+
+    public Item addItem(){
+        this.isAdded = true;
+        return this;
+    }
+
 }
