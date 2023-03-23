@@ -18,9 +18,9 @@ public class SaveItemUseCase implements SaveItem {
     private final ModelMapper mapper;
 
     @Override
-    public Mono<ItemDTO> save(ItemDTO menuDTO) {
+    public Mono<ItemDTO> save(ItemDTO itemDTO) {
 
-        return this.itemRepository.save(mapper.map(menuDTO, Item.class))
+        return this.itemRepository.save(mapper.map(itemDTO, Item.class))
                 .switchIfEmpty(Mono.error(new Throwable("Something went wrong with the request")))
                 .map(item -> mapper.map(item, ItemDTO.class));
     }

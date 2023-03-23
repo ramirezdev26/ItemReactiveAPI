@@ -1,5 +1,7 @@
 package co.com.item.reactive.api.ItemReactiveAPI.domain.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,11 +13,19 @@ public class ItemDTO {
 
     private String id;
 
+    @NotBlank(message="Empty field error")
+    @NotNull(message ="date is required")
     private String category;
 
+    @NotBlank(message="Empty field error")
+    @NotNull(message ="date is required")
     private String description;
+
+    @NotBlank(message="Empty field error")
+    @NotNull(message ="date is required")
     private String name;
 
+    @NotNull(message ="date is required")
     private Integer price;
     private Boolean isAdded = false;
 

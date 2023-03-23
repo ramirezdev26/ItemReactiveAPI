@@ -1,5 +1,7 @@
 package co.com.item.reactive.api.ItemReactiveAPI.domain.collection;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,11 +19,19 @@ public class Item {
     @Id
     private String id;
 
+    @NotBlank(message="Empty field error")
+    @NotNull(message ="category is required")
     private String category;
 
+    @NotBlank(message="Empty field error")
+    @NotNull(message ="description is required")
     private String description;
+
+    @NotBlank(message="Empty field error")
+    @NotNull(message ="name is required")
     private String name;
 
+    @NotNull(message ="price is required")
     private Integer price;
     private Boolean isAdded = false;
 
